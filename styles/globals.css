@@ -1,0 +1,97 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  padding: 9px;
+  width: 100%;
+  background-color: #E57C23;
+  color: #F8F1F1;
+  position: fixed;
+  z-index: 9;
+}
+
+.header-container .logo {
+  float: left;
+  width: 171px;
+  text-align: center;
+}
+
+.header-container .topNavs {
+  float: right;
+}
+
+.clearfix {
+  clear: both;
+}
+
+
+.sidebar {
+  position: absolute;
+  left: 0%;
+  max-width: 300px;
+  min-width: 180px;
+  top:36px;
+  background-color: #E8AA42;
+  color: #F8F1F1;
+  min-height: calc(100% - 36px);
+}
+.sidebar ul {
+  list-style: none;
+  padding: 10px 0%;
+  margin: 0%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar ul li{
+  width: 100%;
+}
+.sidebar ul li a{
+  display: block;
+  padding: 5px 15px;
+  color: #025464;
+  width: 100%;
+}
+.sidebar ul li a:hover, .sidebar ul li a:focus, .sidebar ul li.active a{
+  background-color: #025464;
+  color: #F8F1F1;
+}
+.main {
+  background-color: #F8F1F1;
+  padding: 5rem 0;
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 180px);
+  height: calc(100% - 0px);
+  position: absolute;
+  left: 180px;
+  overflow-y: auto;
+}
+
+footer {
+  padding: 5px 10px;
+  background-color: #025464;
+  color: #F8F1F1;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
