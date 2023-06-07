@@ -1,49 +1,60 @@
 import react from 'react';
-import styles from '../styles/Home.module.css';
+import Index from './mains';
+import Compose from './mains/compose';
+import E404 from './mains/e404';
+import Facebook from './mains/facebook';
+import Instagram from './mains/instagram';
+import Schedules from './mains/schedules';
+import Twitter from './mains/twitter';
+import Youtube from './mains/youtube';
 
 class Main extends react.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      query: '',
+    };
+    this.component = {
+      404: <E404 />,
+      '': <Index props={this.props} />,
+      compose: <Compose props={this.props} />,
+      schedules: <Schedules props={this.props} />,
+      youtube: <Youtube props={this.props} />,
+      facebook: <Facebook props={this.props} />,
+      instagram: <Instagram props={this.props} />,
+      twitter: <Twitter props={this.props} />,
+    };
+    this.keys = Object.keys(this.component);
+  }
+
+  async componentDidMount() {
+    this.setState({
+      query:
+        this.props.query !== undefined && this.props.query.query !== undefined
+          ? this.props.query.query.index
+          : '',
+    });
+    console.log(this.props.query);
+  }
 
   render() {
-    return <main className={'main'}>
-    <h1 className={styles.title}>
-      Welcome to <a href="https://nextjs.org">Next.js!</a>
-    </h1>
-
-    <p className={styles.description}>
-      Get started by editing{' '}
-      <code className={styles.code}>pages/index.js</code>
-    </p>
-
-    <div className={styles.grid}>
-      <a href="https://nextjs.org/docs" className={styles.card}>
-        <h3>Documentation &rarr;</h3>
-        <p>Find in-depth information about Next.js features and API.</p>
-      </a>
-
-      <a href="https://nextjs.org/learn" className={styles.card}>
-        <h3>Learn &rarr;</h3>
-        <p>Learn about Next.js in an interactive course with quizzes!</p>
-      </a>
-
-      <a
-        href="https://github.com/vercel/next.js/tree/master/examples"
-        className={styles.card}
-      >
-        <h3>Examples &rarr;</h3>
-        <p>Discover and deploy boilerplate example Next.js projects.</p>
-      </a>
-
-      <a
-        href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        className={styles.card}
-      >
-        <h3>Deploy &rarr;</h3>
-        <p>
-          Instantly deploy your Next.js site to a public URL with Vercel.
-        </p>
-      </a>
-    </div>
-  </main>;
+    console.log(this.props.query);
+    return (
+      <main className={'main'}>
+        {this.keys.includes(
+          this.props.query !== undefined && this.props.query.query !== undefined
+            ? this.props.query.query.index
+            : ''
+        )
+          ? this.component[
+              this.props.query !== undefined &&
+              this.props.query.query !== undefined
+                ? this.props.query.query.index
+                : ''
+            ]
+          : this.component['404']}
+      </main>
+    );
   }
 }
 

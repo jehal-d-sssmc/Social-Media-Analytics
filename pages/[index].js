@@ -28,10 +28,13 @@ class Index extends react.Component {
     }, 1000);
   }
 
-  loadProps = (Component) => {
-    setTimeout((this) => {
-      return () => <Component {...this.props} />;
-    }, 1000);
+  setPath = (query) => {
+    if (this.props.query !== undefined) {
+      
+      this.setState({
+        query: query,
+      });
+    }
   };
 
   render() {
@@ -43,17 +46,15 @@ class Index extends react.Component {
         {this.state.query === undefined ? (
           <>Loading...</>
         ) : (
-          this.loadProps(
-            <>
-              <Header />
-              <div className="box-wrapper">
-                <Sidebar query={this.state.query} />
-                <Main />
-                <div className="clearfix"></div>
-              </div>
-              <Footer />
-            </>
-          )
+          <>
+            <Header query={this.state.query} setPath={this.setPath} />
+            <div className="box-wrapper">
+              <Sidebar query={this.state.query} setPath={this.setPath} />
+              <Main query={this.state.query} />
+              <div className="clearfix"></div>
+            </div>
+            <Footer query={this.state.query} />
+          </>
         )}
       </div>
     );

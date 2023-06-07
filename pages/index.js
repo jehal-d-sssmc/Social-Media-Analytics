@@ -12,9 +12,9 @@ export default function Home() {
       </Head>
       <Header />
       <div className="box-wrapper">
-      <Sidebar />
-      <Main />
-      <div className="clearfix"></div>
+        <Sidebar />
+        <Main />
+        <div className="clearfix"></div>
       </div>
       <Footer />
     </div>
