@@ -1,5 +1,7 @@
 import react from 'react';
 import styles from '../../styles/Home.module.css';
+import global from '../../inc/global';
+const _app = new global();
 
 class Youtube extends react.Component {
   constructor(props) {
@@ -14,7 +16,10 @@ class Youtube extends react.Component {
     this.setState({
       query: this.props.query,
     });
-    this.authenticate();
+  }
+
+  handleClientLoad = () => {
+
   }
 
   render() {

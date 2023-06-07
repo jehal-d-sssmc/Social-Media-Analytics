@@ -12,10 +12,10 @@ class config {
     this.gapi.scopes = 'https://www.googleapis.com/auth/youtube.readonly';
     this.gapi.discoveryUrl =
       'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest';
-    this.gapi.script = document.createElement('script');
-    this.gapi.script.src = this.gapi.src;
-    this.gapi.accountscript = document.createElement('script');
-    this.gapi.accountscript.src = 'https://accounts.google.com/gsi/client';
+   // this.gapi.script = document.createElement('script');
+    //this.gapi.script.src = this.gapi.src;
+   // this.gapi.accountscript = document.createElement('script');
+   // this.gapi.accountscript.src = 'https://accounts.google.com/gsi/client';
   }
 }
 
