@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import react, { use } from 'react';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Main from '../components/Main';
-import Sidebar from '../components/Sidebar';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import Main from '../../components/Main';
+import Sidebar from '../../components/Sidebar';
 import { useRouter } from 'next/router';
 
 function withParams(Component) {

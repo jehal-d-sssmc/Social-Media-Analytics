@@ -25,9 +25,14 @@ class Main extends react.Component {
       twitter: <Twitter props={this.props} />,
     };
     this.keys = Object.keys(this.component);
+    
   }
 
   async componentDidMount() {
+    
+    console.log(this.props.params);
+   
+    
     this.setState({
       query:
         this.props.query !== undefined && this.props.query.query !== undefined

@@ -21,7 +21,7 @@ class Header extends react.Component {
       <>
         <header>
           <div className="header-container">
-            <div className="logo">Sri Sathya Sai</div>
+            <div className="logo">SSSMC Analytics</div>
             <div className="topNavs">
               <Navs query={this.state.query} setPath={this.setPath} />
             </div>
